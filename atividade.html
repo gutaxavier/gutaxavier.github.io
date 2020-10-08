@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade</title>
+    <title>Cubo Animado</title>
     <style>
         .face {
             display: block;
@@ -54,23 +54,33 @@
             left: 100px;
             transform: rotateX(10deg) rotateY(10deg);
         }
+
         .cubo:hover {
             transition: transform 1.8s;
-            transform: rotateY(-390deg);
-            transform: rotateX(360deg);
+            animation: girar 5s infinite linear;
+        }
+
+        @keyframes girar {
+            from {
+                transform: translateZ(100px) rotateX(10deg) rotateY(10deg);
+            }
+
+            to {
+                transform: translateZ(100px) rotateX(-360deg) rotateY(360deg);
+            }
         }
     </style>
 </head>
 
 <body>
-        <div class="cubo">
-            <div class="face frente"></div>
-            <div class="face direita"></div>
-            <div class="face esquerda"></div>
-            <div class="face cima"></div>
-            <div class="face baixo"></div>
-            <div class="face tras"></div>
-        </div>
+    <div class="cubo">
+        <div class="face frente"></div>
+        <div class="face direita"></div>
+        <div class="face esquerda"></div>
+        <div class="face cima"></div>
+        <div class="face baixo"></div>
+        <div class="face tras"></div>
+    </div>
 </body>
 
 </html>
